@@ -1,6 +1,6 @@
 FROM harvardinformatics/wheezy-php55
 
-RUN apt-get update -y
+RUN apt-get update -o Acquire::Check-Valid-Until=false -y
 
 RUN a2enmod php5 && \
     sed -i -e 's?ErrorLog.*?ErrorLog /dev/stderr?' /etc/apache2/apache2.conf && \
